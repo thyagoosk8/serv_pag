@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-06-17T14:15:37.697Z",
+    "end": "2026-06-17T14:15:37.700Z",
+    "duration": 3,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "41944837-635a-4d07-8e90-26e4726136d4",
+      "title": "",
+      "fullFile": "C:\\Users\\lucia\\servico-pagamento\\test\\servicoPagamento.test.js",
+      "file": "\\test\\servicoPagamento.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eedd8805-68a4-471a-be7f-2f710f458565",
+          "title": "Servico de pagamento",
+          "fullFile": "C:\\Users\\lucia\\servico-pagamento\\test\\servicoPagamento.test.js",
+          "file": "\\test\\servicoPagamento.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validar pagamento com categoria cara",
+              "fullTitle": "Servico de pagamento Validar pagamento com categoria cara",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const servico = new ServicoPagamento();\nservico.pagar(\n    '0987-7656-3475',\n    'Samar',\n    100.87\n);\nconst ultimoPagamento = servico.consultar();\nassert.equal(ultimoPagamento.categoria, 'cara');",
+              "err": {},
+              "uuid": "8c607820-8fcf-411c-ae68-3603d9403ba5",
+              "parentUUID": "eedd8805-68a4-471a-be7f-2f710f458565",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar pagamento com categoria padrao",
+              "fullTitle": "Servico de pagamento Validar pagamento com categoria padrao",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const servico = new ServicoPagamento();\nservico.pagar(\n    '0987-7656-3479',\n    'Samar',\n    80.87\n);\nconst ultimoPagamento = servico.consultar();\nassert.equal(ultimoPagamento.categoria, 'padrao');",
+              "err": {},
+              "uuid": "beb0c491-d56e-4b10-92cb-d3ac1ff1e38b",
+              "parentUUID": "eedd8805-68a4-471a-be7f-2f710f458565",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validar consulta do ultimo pagamento",
+              "fullTitle": "Servico de pagamento Validar consulta do ultimo pagamento",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const servico = new ServicoPagamento();\nservico.pagar(\n    '0987-7656-3546',\n    'Empresa X',\n    80.87\n);\nservico.pagar(\n    '0987-7656-3340',\n    'Empresa',\n    80.87\n);\nconst ultimoPagamento = servico.consultar();\nassert.equal(ultimoPagamento.codigoBarras, '0987-7656-3340');",
+              "err": {},
+              "uuid": "46831cad-5ed5-41f4-b1e8-d81f7d19b1fc",
+              "parentUUID": "eedd8805-68a4-471a-be7f-2f710f458565",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8c607820-8fcf-411c-ae68-3603d9403ba5",
+            "beb0c491-d56e-4b10-92cb-d3ac1ff1e38b",
+            "46831cad-5ed5-41f4-b1e8-d81f7d19b1fc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.5"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports",
+        "reportFilename": "mochawesome-report",
+        "overwrite": "true",
+        "html": "true",
+        "json": "true"
+      },
+      "version": "6.3.2"
+    }
+  }
+}
