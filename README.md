@@ -28,9 +28,15 @@ Relatórios gerados:
 
 ## CI
 O workflow `.github/workflows/ci.yml`:
+- é acionado em `push` para as branches `main` ou `master`
+- pode ser executado manualmente via `workflow_dispatch`
+- roda semanalmente via `schedule`
 - instala dependências com `npm ci`
 - executa `npm run test:report`
+- verifica os arquivos gerados em `reports/`
 - publica `reports/` como artifact `test-report`
+
+
 
 
 
